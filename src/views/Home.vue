@@ -26,7 +26,32 @@
           </child-node>
       </div> 
     </div>
-      <div class="details" >pros</div>
+      <div class="details">
+        <!-- 属性栏固定组 -->
+        <div class="common-group">
+          <div class="r-item" >检视: 名称</div>
+          <input type="text" class="r-input" />
+          <div class="r-btns">
+            <div :class="{ active: !isActive }" @click="isActive = true" >属 性</div>
+            <div :class="{ active: isActive }" @click="isActive = false">事 件</div>
+          </div>
+        </div>
+        <!-- 属性栏变化组 -->
+        <div class="change-group">
+          <div class="pos-group" >
+            <div class="r-pos">位置，<span>尺寸</span> </div>
+            <div class="r-pos r-pos-detail">
+              <div><span>W：</span><input class="r-pos-input" type="text">
+              </div>
+              <div><span> H：</span><input class="r-pos-input" type="text"></div>
+            </div>
+            <div class="r-pos r-pos-detail">
+              <div><span>X：</span><input class="r-pos-input" type="text"></div>
+              <div><span>Y：</span><input class="r-pos-input" type="text"></div>
+            </div>
+          </div>
+        </div  >
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +68,7 @@ export default {
     return {
       width: 1200,
       height: 900,
+      isActive: true,
       btns: [
         {
           icon: '',
@@ -217,6 +243,66 @@ export default {
 }
 /* 右侧属性样式 */
 .details {
+  font-size: 13px;
   width: 220px;
+  line-height: 40px;
+  background: #545454;
+}
+.active {
+  background: #464646;
+}
+.r-item {
+  height: 38px;
+  line-height: 38px;
+  padding: 0 10px;
+  background: #464646;
+  border-bottom: 1px solid #404040;
+}
+.r-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.r-btns {
+  height: 40px;
+  display: flex;
+  font-size: 15px;
+  div {
+    flex: 1;
+    text-align: center;
+    margin-left: -1px;
+    cursor: pointer;
+    border: 1px solid #404040;
+  }
+}
+.pos-group {
+  border-bottom: 1px solid #404040;
+}
+.r-pos {
+  padding: 0 10px;
+}
+.r-pos-input {
+  width: 48px;
+  height: 28px;
+  background: #434343;
+  box-sizing: border-box;
+  outline: none;
+  color: #fff;
+  padding: 0 5px;
+  border: none;
+}
+.r-pos-detail {
+  display: flex;
+  span {
+    display: inline-block;
+    width: 25px;
+  }
+  div:first-child {
+    flex: 1
+  }
+  div:last-child {
+    flex: 0.8
+  }
 }
 </style>

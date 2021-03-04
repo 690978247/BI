@@ -1,0 +1,216 @@
+﻿{
+  "Controls": {
+    "Name": "MainCanvas",
+    "ControlType": "canvas",
+    "PropertyList": {
+      "Width": "1920",
+      "Height": "952",
+      "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}"
+    },
+    "ControlList": [
+      {
+        "Name": "StaticImage10",
+        "ControlType": "staticimage",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "298",
+          "Top": "174",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Source": null
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "Image11",
+        "ControlType": "image",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "431",
+          "Top": "299",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Source": null
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "SolidRectangle12",
+        "ControlType": "solidrectangle",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "733",
+          "Top": "197",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Fill": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "StrokeThickness": "2",
+          "Stroke": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "StrokeDashArray": "",
+          "Shadow": "{}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "DataTextBlock13",
+        "ControlType": "datatextblock",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "280",
+          "Top": "312",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Foreground": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "TextDecorations": "False",
+          "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "BorderBrush": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "BorderThickness": "0",
+          "Shadow": "{}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "Line14",
+        "ControlType": "line",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "527",
+          "Top": "187",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "StrokeThickness": "2",
+          "Stroke": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "StrokeDashArray": ""
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "StaticText15",
+        "ControlType": "statictextblock",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "681",
+          "Top": "449",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Text": "静态文本",
+          "Foreground": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Center",
+          "TextDecorations": "False",
+          "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#00FFFFFF\"}}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "DynamicText16",
+        "ControlType": "dynamictext",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "656",
+          "Top": "312",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Foreground": "#FF000000",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "TextDecorations": "False",
+          "BorderBrush": "#FF707070"
+        },
+        "ControlList": null
+      }
+    ]
+  },
+  "Data": {
+    "PieChartItemList": [],
+    "DashBoardChartItemList": [],
+    "LineChartItemList": [],
+    "BarChartItemList": [],
+    "LineBarChartItemList": [],
+    "ScatterPlotChartItemList": [],
+    "InputDataList": [],
+    "RWDataList": [],
+    "CommonButtonGroupList": [],
+    "CommonButtonList": [],
+    "PressButtonList": [],
+    "TabModuleButtonParaList": [],
+    "TabModuleButtonList": [],
+    "PopupButtonList": [],
+    "SwitchList": [],
+    "StatusAnimationList": [],
+    "TextAnimationList": [],
+    "ImageAnimationList": [],
+    "ElementList": [
+      {
+        "EleName": "MainCanvas",
+        "EleType": "Canvas"
+      },
+      {
+        "EleName": "StaticImage10",
+        "EleType": "StaticImage"
+      },
+      {
+        "EleName": "Image11",
+        "EleType": "Image"
+      },
+      {
+        "EleName": "SolidRectangle12",
+        "EleType": "SolidRectangle"
+      },
+      {
+        "EleName": "DataTextBlock13",
+        "EleType": "DataTextBlock"
+      },
+      {
+        "EleName": "Line14",
+        "EleType": "Line"
+      },
+      {
+        "EleName": "StaticText15",
+        "EleType": "StaticText"
+      },
+      {
+        "EleName": "DynamicText16",
+        "EleType": "DynamicText"
+      }
+    ],
+    "EventScriptList": [],
+    "ParameterReportItemtList": [],
+    "TDDesignerItemList": [],
+    "AlarmGroupItemList": [],
+    "AlarmTagItemList": [],
+    "ComboBoxList": [],
+    "AssociateDateTimePickerList": [],
+    "OutputButtonList": [],
+    "TextImportList": [],
+    "PrintingButtonList": [],
+    "QueryButtonList": [],
+    "AssociateNumericalEntityList": [],
+    "ProductFlowList": [],
+    "ZIndexs": {
+      "StaticImage10": 9,
+      "Image11": 10,
+      "SolidRectangle12": 11,
+      "DataTextBlock13": 12,
+      "Line14": 13,
+      "StaticText15": 14,
+      "DynamicText16": 15
+    },
+    "DataAnimationList": [],
+    "DataStatusTextColorEffectAnimationList": []
+  }
+}
