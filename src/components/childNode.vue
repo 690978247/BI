@@ -27,11 +27,11 @@ export default {
   computed: {
     styleObj () {
       return {
-        width: this.childItem.commonStyle.width + 'px',
-        height: this.childItem.commonStyle.height + 'px',
-        top: this.childItem.commonStyle.y + 'px',
-        left: this.childItem.commonStyle.x + 'px',
-        zIndex: this.childItem.commonStyle.zIndex,
+        width: this.childItem.PropertyList.width + 'px',
+        height: this.childItem.PropertyList.height + 'px',
+        top: this.childItem.PropertyList.Top + 'px',
+        left: this.childItem.PropertyList.Left + 'px',
+        zIndex: this.childItem.PropertyList.zIndex,
       }
     },
   },
@@ -49,11 +49,11 @@ export default {
     handleOut () {},
     //鼠标按下事件
     handleDown (childItem, e) {
-      const { commonStyle: pos } = this.childItem
+      const { PropertyList: pos } = this.childItem
       let startY = e.clientY
       let startX = e.clientX
-      let startTop = pos.y
-      let startLeft = pos.x
+      let startTop = pos.Top
+      let startLeft = pos.Left
       let firstTime = ''
       let lastTime = ''
       let move = moveEvent => {
@@ -64,18 +64,18 @@ export default {
 
         let currX = moveEvent.clientX
         let currY = moveEvent.clientY
-        pos.y = currY - startY + startTop
-        pos.x = currX - startX + startLeft
-        // this.styleObj.top = pos.y + 'px'
-        // this.styleObj.left = pos.x + 'px'
-        this.childItem.commonStyle.zIndex = 20
-        this.childItem.commonStyle.top = pos.y
-        this.childItem.commonStyle.left = pos.x
+        pos.Top = currY - startY + startTop
+        pos.Left = currX - startX + startLeft
+        // this.styleObj.top = pos.Top + 'px'
+        // this.styleObj.left = pos.Left + 'px'
+        this.childItem.PropertyList.zIndex = 20
+        this.childItem.PropertyList.top = pos.Top
+        this.childItem.PropertyList.left = pos.Left
       }
       let up = () => {
         lastTime = new Date().getTime()
         if ((lastTime - firstTime) > 200) {
-          this.childItem.commonStyle.zIndex = 10
+          this.childItem.PropertyList.zIndex = 10
           this.$emit('resize')
         }
         document.removeEventListener('mousemove', move, true)

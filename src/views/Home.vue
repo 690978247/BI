@@ -48,7 +48,7 @@
             <div class="r-pos r-pos-detail">
               <div><span>W：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.width" >
               </div>
-              <div><span> H：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.height"></div>
+              <div><span>H：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.height"></div>
             </div>
             <div class="r-pos r-pos-detail">
               <div><span>X：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.left" ></div>
@@ -122,9 +122,9 @@ export default {
           title: '矩形',
           ControlType: 'rectangle',
           Name: 'rectangle0',
-          commonStyle: {
-          x: 100,
-          y: 500,
+          PropertyList: {
+          Left: 100,
+          Top: 500,
           width: 200,
           height: 140,
           zIndex: 10
@@ -154,8 +154,8 @@ export default {
     // 移动改变元素大小定位
     handleElementResize (pos, index) {
       // if (this.childNodes[index]) {
-      //   this.childNodes[index].commonStyle = pos
-      //   console.log(this.childNodes[index].commonStyle)
+      //   this.childNodes[index].PropertyList = pos
+      //   console.log(this.childNodes[index].PropertyList)
       // }
     },
     // 点击事件，点击后设置当前元素为选中元素
@@ -163,10 +163,10 @@ export default {
       this.activeIndex = index
       this.attrsGroup.title = item.title
       this.attrsGroup.Name = item.Name
-      this.attrsGroup.width = item.commonStyle.width
-      this.attrsGroup.height = item.commonStyle.height
-      this.attrsGroup.top = item.commonStyle.y
-      this.attrsGroup.left = item.commonStyle.x
+      this.attrsGroup.width = item.PropertyList.width
+      this.attrsGroup.height = item.PropertyList.height
+      this.attrsGroup.top = item.PropertyList.Top
+      this.attrsGroup.left = item.PropertyList.Left
       this.attrsGroup.index = index
 
     },
@@ -196,9 +196,9 @@ export default {
         title: data.title,
         ControlType: data.ControlType,
         Name: data.ControlType + this.childNodes.length,
-        commonStyle: {
-          x: targetX - fatherX,
-          y: targetY - fatherY,
+        PropertyList: {
+          Left: targetX - fatherX,
+          Top: targetY - fatherY,
           width: data.width,
           height: data.height,
           zIndex: data.zIndex
@@ -221,11 +221,11 @@ export default {
     },
     handleblur (index) {
       this.childNodes[index].Name = this.attrsGroup.Name
-      this.childNodes[index].commonStyle.height = Number(this.attrsGroup.height)
-      this.childNodes[index].commonStyle.width = Number(this.attrsGroup.width)
-      this.childNodes[index].commonStyle.x = Number(this.attrsGroup.left)
-      this.childNodes[index].commonStyle.y = Number(this.attrsGroup.top)
-      this.childNodes[index].commonStyle.zIndex = Number(this.attrsGroup.zIndex)
+      this.childNodes[index].PropertyList.height = Number(this.attrsGroup.height)
+      this.childNodes[index].PropertyList.width = Number(this.attrsGroup.width)
+      this.childNodes[index].PropertyList.Left = Number(this.attrsGroup.left)
+      this.childNodes[index].PropertyList.Top = Number(this.attrsGroup.top)
+      this.childNodes[index].PropertyList.zIndex = Number(this.attrsGroup.zIndex)
     },
   }
 }
