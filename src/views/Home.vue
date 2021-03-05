@@ -157,7 +157,7 @@ export default {
     },
     handleClick (item, index) {
       this.attrsGroup.title = item.title
-      this.attrsGroup.name = item.type + index
+      this.attrsGroup.name = item.name
       this.attrsGroup.width = item.commonStyle.width
       this.attrsGroup.height = item.commonStyle.height
       this.attrsGroup.top = item.commonStyle.y
