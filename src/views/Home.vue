@@ -215,11 +215,11 @@ export default {
     },
     handleblur (index) {
       this.childNodes[index].name = this.attrsGroup.name
-      this.childNodes[index].commonStyle.height = this.attrsGroup.height
-      this.childNodes[index].commonStyle.width = this.attrsGroup.width
-      this.childNodes[index].commonStyle.x = this.attrsGroup.left
-      this.childNodes[index].commonStyle.y = this.attrsGroup.top
-      this.childNodes[index].commonStyle.zIndex = this.attrsGroup.zIndex
+      this.childNodes[index].commonStyle.height = Number(this.attrsGroup.height)
+      this.childNodes[index].commonStyle.width = Number(this.attrsGroup.width)
+      this.childNodes[index].commonStyle.x = Number(this.attrsGroup.left)
+      this.childNodes[index].commonStyle.y = Number(this.attrsGroup.top)
+      this.childNodes[index].commonStyle.zIndex = Number(this.attrsGroup.zIndex)
     },
   }
 }
