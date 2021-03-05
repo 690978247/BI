@@ -3,9 +3,8 @@
     <div class="moduleShape"
       @mouseout="handleOut()"
       @mousedown="handleDown(childItem, $event)"
-      @click.stop="handleClick"
     >
-      {{childItem.name}}
+      {{childItem.type}}
     </div>
   </div>
 </template>
@@ -86,9 +85,9 @@ export default {
       return true
     },
     // 获取point计算后样式
-    handleClick () {
-      console.log(this.childItem.name)
-    },
+    // handleClick () {
+    //   console.log(this.childItem.name)
+    // },
   }
 }
 </script>
@@ -96,6 +95,7 @@ export default {
 <style lang="scss" scoped>
 .commonModule {
   position: absolute;
+  user-select: none; 
   border: 1px solid #000;
   &:hover {
     border: 1px dashed #1AB399;

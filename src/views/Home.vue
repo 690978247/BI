@@ -8,7 +8,7 @@
         <div v-for="(item, key) in btns" :key="key" class="btn" draggable @dragstart="handleStart($event, item)" @drag="handleDrag($event, item)" >{{item.name}}</div>
       </div>
       <div class="canvas" id="wrap">
-        <div class="wrap-tab" >112312</div>
+        <div class="wrap-tab" >test</div>
         <div class="canvas-wrap" 
           @dragover.prevent
           @dragenter="dragenter"
@@ -25,8 +25,9 @@
           v-for="(item, index) in childNodes"
           :key="index"
           :child-item="{ ...item, index }"
-          @resize="handleElementResize">
-          </child-node>
+          @resize="handleElementResize"
+          @click.native="handleClick(item, index)"
+        />
       </div> 
     
     
@@ -35,8 +36,8 @@
       <div class="details">
         <!-- 属性栏固定组 -->
         <div class="common-group">
-          <div class="r-item" >检视: 名称</div>
-          <input type="text" class="r-input" />
+          <div class="r-item" >检视: {{attrsGroup.title}}</div>
+          <input type="text" class="r-input" v-model="attrsGroup.name" />
           <div class="r-btns">
             <div :class="{ active: !isActive }" @click="isActive = true" >属 性</div>
             <div :class="{ active: isActive }" @click="isActive = false">事 件</div>
@@ -47,13 +48,13 @@
           <div class="pos-group" >
             <div class="r-pos">位置，<span>尺寸</span> </div>
             <div class="r-pos r-pos-detail">
-              <div><span>W：</span><input class="r-pos-input" type="text">
+              <div><span>W：</span><input class="r-pos-input" type="text" v-model="attrsGroup.width" >
               </div>
-              <div><span> H：</span><input class="r-pos-input" type="text"></div>
+              <div><span> H：</span><input class="r-pos-input" type="text" v-model="attrsGroup.height"></div>
             </div>
             <div class="r-pos r-pos-detail">
-              <div><span>X：</span><input class="r-pos-input" type="text"></div>
-              <div><span>Y：</span><input class="r-pos-input" type="text"></div>
+              <div><span>X：</span><input class="r-pos-input" type="text" v-model="attrsGroup.left" ></div>
+              <div><span>Y：</span><input class="r-pos-input" type="text" v-model="attrsGroup.top"></div>
             </div>
           </div>
         </div  >
@@ -109,7 +110,15 @@ export default {
           zIndex: 10,
         }
       ],
-      childNodes: []
+      childNodes: [],
+      attrsGroup: {
+        title: '',
+        name: '',
+        width: null,
+        heihgt: null,
+        top: null,
+        left: null
+      }
     }
   },
   created () {
@@ -132,7 +141,14 @@ export default {
       //   console.log(this.childNodes[index].commonStyle)
       // }
     },
-
+    handleClick (item, index) {
+      this.attrsGroup.title = item.name
+      this.attrsGroup.name = item.type + index
+      this.attrsGroup.width = item.commonStyle.width
+      this.attrsGroup.height = item.commonStyle.height
+      this.attrsGroup.top = item.commonStyle.y
+      this.attrsGroup.left = item.commonStyle.x
+    },
     handleStart (e, item) {
       console.log(e.target)
       // if (e.target)
