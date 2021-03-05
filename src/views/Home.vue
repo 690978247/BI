@@ -7,14 +7,15 @@
         <div class="l-title l-subtitle">标准组件</div>
         <div v-for="(item, key) in btns" :key="key" class="btn" draggable @dragstart="handleStart($event, item)" @drag="handleDrag($event, item)" >{{item.name}}</div>
       </div>
-      <div class="canvas-wrap" 
-        @dragover.prevent
-        @dragenter="dragenter"
-        @dragleave="dragleave"
-        @dragover="dragovers"
-        @drop="drops"
-        ref="wrap"
-        id="wrap"
+      <div class="canvas" id="wrap">
+        <div class="wrap-tab" >112312</div>
+        <div class="canvas-wrap" 
+          @dragover.prevent
+          @dragenter="dragenter"
+          @dragleave="dragleave"
+          @dragover="dragovers"
+          @drop="drops"
+          ref="wrap"
         >
       <div class="wrap" >
       <!-- <canvas id="canvas" ref="canvas" :width="width" :height="height" class="canvas">
@@ -27,7 +28,10 @@
           @resize="handleElementResize">
           </child-node>
       </div> 
-    </div>
+    
+    
+        </div>
+      </div>
       <div class="details">
         <!-- 属性栏固定组 -->
         <div class="common-group">
@@ -197,7 +201,7 @@ export default {
 
 /* 顶部样式 */
 .page-tools {
-  width: 100;
+  width: 100%;
   height: 85px;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -210,7 +214,8 @@ export default {
 }
 /* 导航栏样式 */
 .btn-groups {
-  width: 200px;
+  width: 180px;
+  min-width: 180px;
   height: 100%;
   background: #3d3d3d;
   text-align: center;
@@ -230,7 +235,8 @@ export default {
   color: #ccc;
   padding: 8px;
   cursor: pointer;
-  border-bottom: 1px solid #404040;
+  // border-bottom: 1px solid #404040;
+  border: 1px solid #404040;
   transition: All 0.3s ease-in-out;
 }
 
@@ -240,14 +246,26 @@ export default {
   color: #1ab399;
 }
 /* 中间画布样式 */
-.canvas-wrap {
-  width: calc(100% - 200px);
+.canvas {
+  width: 100%;
   height: 100%;
+}
+.wrap-tab {
+  height: 30px;
+  font-size: 12px;
+  padding-left: 3px;
+  line-height: 30px;
+}
+.canvas-wrap {
+  height: calc(100% - 30px - 2px);  //画布高度需要减去顶部wrap-tabs高度减去上边框线的高度
   overflow: auto;
   color: #000;
   background: #fff;
   text-align: center;
   position: relative;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
   .wrap {
     width: 100%;
     height: 100%;
@@ -256,7 +274,8 @@ export default {
 /* 右侧属性样式 */
 .details {
   font-size: 13px;
-  width: 220px;
+  width: 200px;
+  min-width: 200px;
   line-height: 40px;
   background: #545454;
 }
