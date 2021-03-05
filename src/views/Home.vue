@@ -3,6 +3,8 @@
     <div class="page-tools">1</div>
     <div class="page-wrap">
       <div class="btn-groups" id="btnGroups" >
+        <div class="l-title" >组件箱</div>
+        <div class="l-title l-subtitle">标准组件</div>
         <div v-for="(item, key) in btns" :key="key" class="btn" draggable @dragstart="handleStart($event, item)" @drag="handleDrag($event, item)" >{{item.name}}</div>
       </div>
       <div class="canvas-wrap" 
@@ -214,6 +216,16 @@ export default {
   text-align: center;
   user-select: none;
 }
+.l-title {
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  padding-left: 20px;
+}
+.l-subtitle {
+  background: #555555;
+}
 .btn-groups .btn {
   color: #ccc;
   padding: 8px;
@@ -262,6 +274,7 @@ export default {
   width: 100%;
   height: 40px;
   padding: 0 10px;
+  outline: none;
   box-sizing: border-box;
 }
 .r-btns {
