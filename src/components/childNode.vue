@@ -4,7 +4,7 @@
       @mouseout="handleOut()"
       @mousedown="handleDown(childItem, $event)"
     >
-      {{childItem.name}}
+      {{childItem.text}}
     </div>
   </div>
 </template>

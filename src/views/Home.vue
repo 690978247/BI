@@ -18,14 +18,12 @@
           ref="wrap"
         >
       <div class="wrap" >
-      <!-- <canvas id="canvas" ref="canvas" :width="width" :height="height" class="canvas">
-        Your browser does not support the canvas element.
-      </canvas> -->
         <child-node
           v-for="(item, index) in childNodes"
           :key="index"
           :child-item="{ ...item, index }"
           @resize="handleElementResize"
+          @keyup.native.enter="handleKeypress"
           @click.native="handleClick(item, index)"
         />
       </div> 
@@ -87,14 +85,6 @@ export default {
         },
         {
           icon: '',
-          title: '椭圆',
-          type: 'ellipse',
-          width: 200,
-          height: 60,
-          zIndex: 10,
-        },
-        {
-          icon: '',
           title: '矩形',
           type: 'rectangle',
           width: 200,
@@ -103,9 +93,25 @@ export default {
         },
         {
           icon: '',
+          title: '图片',
+          type: 'image',
+          width: 80,
+          height: 50,
+          zIndex: 10,
+        },
+        {
+          icon: '',
+          title: '文本',
+          type: 'text',
+          width: 100,
+          height: 50,
+          zIndex: 10,
+        },
+        {
+          icon: '',
           title: '按钮',
           type: 'btn',
-          width: 200,
+          width: 100,
           height: 40,
           zIndex: 10,
         }
@@ -135,19 +141,13 @@ export default {
       }
     }
   },
-  created () {
-    // this.$nextTick(() => {
-    //   // let ax,ay,x,y;
-    //   // var c = document.getElementById("canvas")
-    //   // var cxt = c.getContext("2d")
-    //   // cxt.fillStyle="#FF0000"
-    //   // cxt.beginPath()
-    //   // cxt.arc(70,18,15,0,Math.PI*2,true)
-    //   // cxt.closePath()
-    //   // cxt.fill()
-    // })
+  mounted () {
+    // window.addEventListener('keyup',this.handleKeypress)
   },
   methods: {
+    handleKeypress (e) {
+      console.log(e)
+    },
     // 移动改变元素大小定位
     handleElementResize (pos, index) {
       // if (this.childNodes[index]) {
