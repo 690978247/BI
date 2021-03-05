@@ -22,8 +22,8 @@
           v-for="(item, index) in childNodes"
           :key="index"
           :child-item="{ ...item, index }"
+          :class="activeIndex === index ? 'activeItem': ''"
           @resize="handleElementResize"
-          @keyup.native.enter="handleKeypress"
           @click.native="handleClick(item, index)"
         />
       </div> 
@@ -74,6 +74,7 @@ export default {
       width: 1200,
       height: 900,
       isActive: true,
+      activeIndex: null,
       btns: [
         {
           icon: '',
@@ -142,12 +143,14 @@ export default {
     }
   },
   mounted () {
-    // window.addEventListener('keyup',this.handleKeypress)
+    
   },
   methods: {
-    handleKeypress (e) {
-      console.log(e)
-    },
+    // handleKeypress (e, p) {
+    //   if (e.keyCode === 46) {
+    //     console.log(e)
+    //   }
+    // },
     // 移动改变元素大小定位
     handleElementResize (pos, index) {
       // if (this.childNodes[index]) {
@@ -155,7 +158,9 @@ export default {
       //   console.log(this.childNodes[index].commonStyle)
       // }
     },
+    // 点击事件，点击后设置当前元素为选中元素
     handleClick (item, index) {
+      this.activeIndex = index
       this.attrsGroup.title = item.title
       this.attrsGroup.name = item.name
       this.attrsGroup.width = item.commonStyle.width
@@ -163,6 +168,7 @@ export default {
       this.attrsGroup.top = item.commonStyle.y
       this.attrsGroup.left = item.commonStyle.x
       this.attrsGroup.index = index
+
     },
     handleStart (e, item) {
       console.log(e.target)
@@ -231,7 +237,12 @@ export default {
   background: #383838;
   color: #ccc;
 }
-
+.activeItem {
+  border: 2px solid red;
+  &:hover{
+    border: 2px solid red
+  }
+}
 .canvas-page {
   width: 100%;
   height: 100%;
