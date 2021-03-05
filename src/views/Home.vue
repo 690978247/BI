@@ -35,7 +35,7 @@
         <!-- 属性栏固定组 -->
         <div class="common-group">
           <div class="r-item" >检视: {{attrsGroup.title}}</div>
-          <input type="text" class="r-input" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.name" />
+          <input type="text" class="r-input" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.Name" />
           <div class="r-btns">
             <div :class="{ active: !isActive }" @click="isActive = true" >属 性</div>
             <div :class="{ active: isActive }" @click="isActive = false">事 件</div>
@@ -79,7 +79,7 @@ export default {
         {
           icon: '',
           title: '直线',
-          type: 'line',
+          ControlType: 'line',
           width: 200,
           height: 40,
           zIndex: 10,
@@ -87,7 +87,7 @@ export default {
         {
           icon: '',
           title: '矩形',
-          type: 'rectangle',
+          ControlType: 'rectangle',
           width: 200,
           height: 140,
           zIndex: 10,
@@ -95,7 +95,7 @@ export default {
         {
           icon: '',
           title: '图片',
-          type: 'image',
+          ControlType: 'image',
           width: 80,
           height: 50,
           zIndex: 10,
@@ -103,7 +103,7 @@ export default {
         {
           icon: '',
           title: '文本',
-          type: 'text',
+          ControlType: 'text',
           width: 100,
           height: 50,
           zIndex: 10,
@@ -111,7 +111,7 @@ export default {
         {
           icon: '',
           title: '按钮',
-          type: 'btn',
+          ControlType: 'btn',
           width: 100,
           height: 40,
           zIndex: 10,
@@ -120,8 +120,8 @@ export default {
       childNodes: [
         {
           title: '矩形',
-          type: 'rectangle',
-          name: 'rectangle0',
+          ControlType: 'rectangle',
+          Name: 'rectangle0',
           commonStyle: {
           x: 100,
           y: 500,
@@ -134,7 +134,7 @@ export default {
       ],
       attrsGroup: {
         title: '',
-        name: '',
+        Name: '',
         width: null,
         height: null,
         top: null,
@@ -162,7 +162,7 @@ export default {
     handleClick (item, index) {
       this.activeIndex = index
       this.attrsGroup.title = item.title
-      this.attrsGroup.name = item.name
+      this.attrsGroup.Name = item.Name
       this.attrsGroup.width = item.commonStyle.width
       this.attrsGroup.height = item.commonStyle.height
       this.attrsGroup.top = item.commonStyle.y
@@ -194,8 +194,8 @@ export default {
       
       this.childNodes.push({
         title: data.title,
-        type: data.type,
-        name: data.type + this.childNodes.length,
+        ControlType: data.ControlType,
+        Name: data.ControlType + this.childNodes.length,
         commonStyle: {
           x: targetX - fatherX,
           y: targetY - fatherY,
@@ -220,7 +220,7 @@ export default {
        event.preventDefault()
     },
     handleblur (index) {
-      this.childNodes[index].name = this.attrsGroup.name
+      this.childNodes[index].Name = this.attrsGroup.Name
       this.childNodes[index].commonStyle.height = Number(this.attrsGroup.height)
       this.childNodes[index].commonStyle.width = Number(this.attrsGroup.width)
       this.childNodes[index].commonStyle.x = Number(this.attrsGroup.left)

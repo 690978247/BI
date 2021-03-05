@@ -87,7 +87,7 @@ export default {
     },
     // 获取point计算后样式
     // handleClick () {
-    //   console.log(this.childItem.name)
+    //   console.log(this.childItem.Name)
     // },
   }
 }
