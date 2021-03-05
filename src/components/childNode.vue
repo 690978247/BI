@@ -4,7 +4,7 @@
       @mouseout="handleOut()"
       @mousedown="handleDown(childItem, $event)"
     >
-      {{childItem.type}}
+      {{childItem.name}}
     </div>
   </div>
 </template>
@@ -57,6 +57,7 @@ export default {
       let firstTime = ''
       let lastTime = ''
       let move = moveEvent => {
+        
         // !#zh 移动的时候，不需要向后代元素传递事件，只需要单纯的移动就OK
         moveEvent.stopPropagation()
         moveEvent.preventDefault()
@@ -68,8 +69,8 @@ export default {
         // this.styleObj.top = pos.y + 'px'
         // this.styleObj.left = pos.x + 'px'
         this.childItem.commonStyle.zIndex = 20
-        this.childItem.commonStyle.top = pos.y + 'px'
-        this.childItem.commonStyle.left = pos.x + 'px'
+        this.childItem.commonStyle.top = pos.y
+        this.childItem.commonStyle.left = pos.x
       }
       let up = () => {
         lastTime = new Date().getTime()

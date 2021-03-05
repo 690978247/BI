@@ -5,7 +5,7 @@
       <div class="btn-groups" id="btnGroups" >
         <div class="l-title" >组件箱</div>
         <div class="l-title l-subtitle">标准组件</div>
-        <div v-for="(item, key) in btns" :key="key" class="btn" draggable @dragstart="handleStart($event, item)" @drag="handleDrag($event, item)" >{{item.name}}</div>
+        <div v-for="(item, key) in btns" :key="key" class="btn" draggable @dragstart="handleStart($event, item)" @drag="handleDrag($event, item)" >{{item.title}}</div>
       </div>
       <div class="canvas" id="wrap">
         <div class="wrap-tab" >test</div>
@@ -37,7 +37,7 @@
         <!-- 属性栏固定组 -->
         <div class="common-group">
           <div class="r-item" >检视: {{attrsGroup.title}}</div>
-          <input type="text" class="r-input" v-model="attrsGroup.name" />
+          <input type="text" class="r-input" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.name" />
           <div class="r-btns">
             <div :class="{ active: !isActive }" @click="isActive = true" >属 性</div>
             <div :class="{ active: isActive }" @click="isActive = false">事 件</div>
@@ -48,13 +48,13 @@
           <div class="pos-group" >
             <div class="r-pos">位置，<span>尺寸</span> </div>
             <div class="r-pos r-pos-detail">
-              <div><span>W：</span><input class="r-pos-input" type="text" v-model="attrsGroup.width" >
+              <div><span>W：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.width" >
               </div>
-              <div><span> H：</span><input class="r-pos-input" type="text" v-model="attrsGroup.height"></div>
+              <div><span> H：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.height"></div>
             </div>
             <div class="r-pos r-pos-detail">
-              <div><span>X：</span><input class="r-pos-input" type="text" v-model="attrsGroup.left" ></div>
-              <div><span>Y：</span><input class="r-pos-input" type="text" v-model="attrsGroup.top"></div>
+              <div><span>X：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.left" ></div>
+              <div><span>Y：</span><input class="r-pos-input" type="text" @blur="handleblur(attrsGroup.index)" v-model="attrsGroup.top"></div>
             </div>
           </div>
         </div  >
@@ -79,7 +79,7 @@ export default {
       btns: [
         {
           icon: '',
-          name: '直线',
+          title: '直线',
           type: 'line',
           width: 200,
           height: 40,
@@ -87,7 +87,7 @@ export default {
         },
         {
           icon: '',
-          name: '椭圆',
+          title: '椭圆',
           type: 'ellipse',
           width: 200,
           height: 60,
@@ -95,7 +95,7 @@ export default {
         },
         {
           icon: '',
-          name: '矩形',
+          title: '矩形',
           type: 'rectangle',
           width: 200,
           height: 140,
@@ -103,19 +103,33 @@ export default {
         },
         {
           icon: '',
-          name: '按钮',
+          title: '按钮',
           type: 'btn',
           width: 200,
           height: 40,
           zIndex: 10,
         }
       ],
-      childNodes: [],
+      childNodes: [
+        {
+          title: '矩形',
+          type: 'rectangle',
+          name: 'rectangle0',
+          commonStyle: {
+          x: 100,
+          y: 500,
+          width: 200,
+          height: 140,
+          zIndex: 10
+        },
+        pointList: ['lt', 'rt', 'lb', 'rb', 'l', 'r', 't', 'b'],
+        }
+      ],
       attrsGroup: {
         title: '',
         name: '',
         width: null,
-        heihgt: null,
+        height: null,
         top: null,
         left: null
       }
@@ -142,12 +156,13 @@ export default {
       // }
     },
     handleClick (item, index) {
-      this.attrsGroup.title = item.name
+      this.attrsGroup.title = item.title
       this.attrsGroup.name = item.type + index
       this.attrsGroup.width = item.commonStyle.width
       this.attrsGroup.height = item.commonStyle.height
       this.attrsGroup.top = item.commonStyle.y
       this.attrsGroup.left = item.commonStyle.x
+      this.attrsGroup.index = index
     },
     handleStart (e, item) {
       console.log(e.target)
@@ -172,8 +187,9 @@ export default {
       console.log(event)
       
       this.childNodes.push({
-        name: data.name,
+        title: data.title,
         type: data.type,
+        name: data.type + this.childNodes.length,
         commonStyle: {
           x: targetX - fatherX,
           y: targetY - fatherY,
@@ -196,6 +212,14 @@ export default {
          event.dataTransfer.dropEffect = 'copy'
        }
        event.preventDefault()
+    },
+    handleblur (index) {
+      this.childNodes[index].name = this.attrsGroup.name
+      this.childNodes[index].commonStyle.height = this.attrsGroup.height
+      this.childNodes[index].commonStyle.width = this.attrsGroup.width
+      this.childNodes[index].commonStyle.x = this.attrsGroup.left
+      this.childNodes[index].commonStyle.y = this.attrsGroup.top
+      this.childNodes[index].commonStyle.zIndex = this.attrsGroup.zIndex
     },
   }
 }
