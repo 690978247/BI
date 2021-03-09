@@ -1,0 +1,273 @@
+﻿{
+  "Controls": {
+    "Name": "MainCanvas",
+    "ControlType": "canvas",
+    "PropertyList": {
+      "Width": "1920",
+      "Height": "952",
+      "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}"
+    },
+    "ControlList": [
+      {
+        "Name": "StaticImage2",
+        "ControlType": "staticimage",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "273",
+          "Top": "241",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Source": null
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "Image3",
+        "ControlType": "image",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "412",
+          "Top": "399",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Source": null
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "ComboBox4",
+        "ControlType": "combobox",
+        "PropertyList": {
+          "Width": "180",
+          "Height": "36",
+          "Left": "412",
+          "Top": "159",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "Foreground": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "BorderBrush": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "BorderThickness": "1",
+          "Shadow": "{}",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "DataTextBlock5",
+        "ControlType": "datatextblock",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "675",
+          "Top": "296",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Foreground": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "TextDecorations": "False",
+          "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "BorderBrush": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "BorderThickness": "0",
+          "Shadow": "{}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "Line6",
+        "ControlType": "line",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "775",
+          "Top": "166",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "StrokeThickness": "2",
+          "Stroke": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "StrokeDashArray": ""
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "StaticText7",
+        "ControlType": "statictextblock",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "871",
+          "Top": "380",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Text": "静态文本",
+          "Foreground": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Center",
+          "TextDecorations": "False",
+          "Background": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#00FFFFFF\"}}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "DynamicText8",
+        "ControlType": "dynamictext",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "567",
+          "Top": "624",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Foreground": "#FF000000",
+          "FontFamily": "思源黑体 CN",
+          "FontSize": "12",
+          "Blod": "False",
+          "TextDecorations": "False",
+          "BorderBrush": "#FF707070"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "SolidRectangle9",
+        "ControlType": "solidrectangle",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "1041",
+          "Top": "249",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Fill": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "StrokeThickness": "2",
+          "Stroke": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "StrokeDashArray": "",
+          "Shadow": "{}"
+        },
+        "ControlList": null
+      },
+      {
+        "Name": "SolidRectangle15",
+        "ControlType": "solidrectangle",
+        "PropertyList": {
+          "Width": "100",
+          "Height": "30",
+          "Left": "255",
+          "Top": "540",
+          "RotateAngle": "0",
+          "Opacity": "100",
+          "Fill": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FFFFFFFF\"}}",
+          "StrokeThickness": "2",
+          "Stroke": "{\"ColorType\":\"SolidColor\",\"Data\":{\"Color\":\"#FF000000\"}}",
+          "StrokeDashArray": "",
+          "Shadow": "{}"
+        },
+        "ControlList": null
+      }
+    ]
+  },
+  "Data": {
+    "PieChartItemList": [],
+    "DashBoardChartItemList": [],
+    "LineChartItemList": [],
+    "BarChartItemList": [],
+    "LineBarChartItemList": [],
+    "ScatterPlotChartItemList": [],
+    "InputDataList": [],
+    "RWDataList": [],
+    "CommonButtonGroupList": [],
+    "CommonButtonList": [],
+    "PressButtonList": [],
+    "TabModuleButtonParaList": [],
+    "TabModuleButtonList": [],
+    "PopupButtonList": [],
+    "SwitchList": [],
+    "StatusAnimationList": [],
+    "TextAnimationList": [],
+    "ImageAnimationList": [],
+    "ElementList": [
+      {
+        "EleName": "MainCanvas",
+        "EleType": "Canvas"
+      },
+      {
+        "EleName": "StaticImage2",
+        "EleType": "StaticImage"
+      },
+      {
+        "EleName": "Image3",
+        "EleType": "Image"
+      },
+      {
+        "EleName": "ComboBox4",
+        "EleType": "ComboBox"
+      },
+      {
+        "EleName": "DataTextBlock5",
+        "EleType": "DataTextBlock"
+      },
+      {
+        "EleName": "Line6",
+        "EleType": "Line"
+      },
+      {
+        "EleName": "StaticText7",
+        "EleType": "StaticText"
+      },
+      {
+        "EleName": "DynamicText8",
+        "EleType": "DynamicText"
+      },
+      {
+        "EleName": "SolidRectangle9",
+        "EleType": "SolidRectangle"
+      },
+      {
+        "EleName": "SolidRectangle15",
+        "EleType": "SolidRectangle"
+      }
+    ],
+    "EventScriptList": [],
+    "ParameterReportItemtList": [],
+    "TDDesignerItemList": [],
+    "AlarmGroupItemList": [],
+    "AlarmTagItemList": [],
+    "ComboBoxList": [
+      {
+        "ID": null,
+        "ElementName": "ComboBox4",
+        "DefaultShowText": "全部",
+        "SoucesItem": null,
+        "SoucesShowText": null
+      }
+    ],
+    "AssociateDateTimePickerList": [],
+    "OutputButtonList": [],
+    "TextImportList": [],
+    "PrintingButtonList": [],
+    "QueryButtonList": [],
+    "AssociateNumericalEntityList": [],
+    "ProductFlowList": [],
+    "ZIndexs": {
+      "StaticImage2": 1,
+      "Image3": 2,
+      "ComboBox4": 3,
+      "DataTextBlock5": 4,
+      "Line6": 5,
+      "StaticText7": 6,
+      "DynamicText8": 7,
+      "SolidRectangle9": 8,
+      "SolidRectangle15": 14
+    },
+    "DataAnimationList": [],
+    "DataStatusTextColorEffectAnimationList": []
+  }
+}

@@ -63,6 +63,7 @@
 
 <script>
 import childNode from '../components/childNode'
+import convertPointStyle from '../utils/draw'
 
 export default {
   name: 'Home',
